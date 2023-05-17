@@ -46,7 +46,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Employees table GROUP BY Test</title>
 </head>
 <body>
    <h1>Employees table GROUP BY Test</h1>
