@@ -7,12 +7,6 @@
 	
 	[이전]1 2 3 ...[다음] 페이징 작업까지 */
 	
-	// 페이징
-	int currentPage = 1;
-	if(request.getParameter("currentPage") != null) {
-		currentPage = Integer.parseInt(request.getParameter("currentPage")); //"문자열"이니까 integer로 바꿔준다
-	}
-	
 	// DB연동 
 	String driver = "oracle.jdbc.driver.OracleDriver";
 	String dburl = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -21,6 +15,12 @@
 	Class.forName(driver);
 	Connection conn = DriverManager.getConnection(dburl, dbuser, dbpw);
 	System.out.println(conn);
+	
+	// 페이징 -------------------------------------------------------------------
+	int currentPage = 1;
+	if(request.getParameter("currentPage") != null) {
+		currentPage = Integer.parseInt(request.getParameter("currentPage")); //"문자열"이니까 integer로 바꿔준다
+	}
 	
 	int totalRow = 0; // 테이블 총 행
 	String totalRowSql = "select count(*) from employees";
@@ -173,6 +173,6 @@ a:hover{color: orange;}
 	<%
 		}
 	%>
-	<!-- 커밋 확인용 주석 -->
+	<!-- 커밋 확인용 주석 & 톰캣 서버 재구동 커밋 확인 -->
 </body>
 </html>
