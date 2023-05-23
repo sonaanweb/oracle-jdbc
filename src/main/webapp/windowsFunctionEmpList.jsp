@@ -150,7 +150,7 @@ a:hover{color: orange;}
 		for(int i = minPage; i<=maxPage; i=i+1) {
 			if(i == currentPage){
 	%>
-	
+
 			<span><%=i%></span>
 			
 	<%			
